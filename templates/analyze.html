@@ -1,0 +1,19 @@
+{% extends "basic.html" %}
+
+
+{% block body %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success your text has been analysed</strong> Check out the result.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+    <div class="container">
+        <h1>{{purpose}}</h1>
+<p>
+      <pre>{{analyzed_text}}</pre> <!--html inside a p tag removes extra spaces and newline character.so use pre tag.-->
+</p>
+
+    </div>
+
+{% endblock %}
+

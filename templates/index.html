@@ -1,0 +1,43 @@
+{% extends "basic.html" %}
+
+
+{% block body %}
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Welcome to textutils!</strong> Check out the features.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+    <div class="container">
+        <form action="/analyze" method="post">{% csrf_token %}
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"  >Enter your text here.</label>
+            <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="7"></textarea>
+        </div>
+
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="removepunc" id="flexSwitchCheckDefault1">
+            <label class="form-check-label" for="flexSwitchCheckDefault1">Remove punctuations</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="capatalize" id="flexSwitchCheckDefault2">
+            <label class="form-check-label" for="flexSwitchCheckDefault2">UPPER CASE</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="spaceremove" id="flexSwitchCheckDefault3">
+            <label class="form-check-label" for="flexSwitchCheckDefault3">Remove Extra Space</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="newlineremove" id="flexSwitchCheckDefault4">
+            <label class="form-check-label" for="flexSwitchCheckDefault4">Remove newline </label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="charcount" id="flexSwitchCheckDefault5">
+            <label class="form-check-label" for="flexSwitchCheckDefault5">count character</label>
+        </div>
+    <button type="submit" class="btn btn-dark mt-2">Analyse Text</button>
+
+        </form>
+    </div>
+{% endblock %}
